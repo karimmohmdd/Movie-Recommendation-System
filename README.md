@@ -1,11 +1,12 @@
 # Movie-Recommendation-System
 🎬 Building and Deploying a Netflix Recommender System
-📌 Overview
 
+📌 Overview
 This project implements a Content-Based Recommender System that suggests movies similar to a movie liked by the user.
 In addition to similarity-based recommendations, the system also performs Sentiment Analysis on user reviews to better understand audience opinions about the movie.
 
 The goal is to simulate a simplified version of a Netflix-style recommendation engine using real-world data sources and machine learning techniques.
+
 
 🧠 Recommendation Approach
 
