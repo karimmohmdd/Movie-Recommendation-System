@@ -1,127 +1,100 @@
-# Movie-Recommendation-System
-🎬 Building and Deploying a Netflix Recommender System
 
-📌 Overview
-This project implements a Content-Based Recommender System that suggests movies similar to a movie liked by the user.
-In addition to similarity-based recommendations, the system also performs Sentiment Analysis on user reviews to better understand audience opinions about the movie.
+# 🎬 Movie Recommender System
 
-The goal is to simulate a simplified version of a Netflix-style recommendation engine using real-world data sources and machine learning techniques.
+## 📌 Project Overview
+This project implements a **Content-Based Movie Recommender System** that recommends movies similar to a movie liked by the user.  
+In addition to recommendations, the system performs **Sentiment Analysis** on user reviews to analyze audience opinions.
 
+The project combines **API integration**, **web scraping**, **data preprocessing**, and **machine learning** techniques to simulate a simplified Netflix-style recommendation engine.
 
-🧠 Recommendation Approach
+---
 
-Content-Based Filtering
+## 🧠 Recommendation Methodology
+- **Content-Based Filtering**
+- Movies are recommended based on similarity in:
+  - Genre
+  - Runtime
+  - Rating
+  - Overview
+  - Other metadata
+- The system focuses on movie features rather than user-to-user interactions.
 
-Recommends movies based on similarity in content such as:
+---
 
-Genre
+## 🌐 Data Sources
 
-Runtime
+### 1️⃣ TMDB API
+Movie metadata is fetched using **The Movie Database (TMDB) API** by passing the **IMDB ID** of each movie.
 
-Rating
+**Fetched details include:**
+- Movie title
+- Genres
+- Runtime
+- Rating
+- Poster
+- Release year
+- Overview
 
-Overview
-
-Other metadata
-
-The system does not depend on other users’ behavior, but instead focuses on the characteristics of the selected movie.
-
-🌐 Data Sources
-1️⃣ TMDB API
-
-Movie details are fetched using The Movie Database (TMDB) API:
-
-Movie title
-
-Genres
-
-Runtime
-
-Rating
-
-Poster
-
-Release year
-
-Other metadata
-
-The TMDB API is accessed using the IMDB ID of each movie.
-🔗 TMDB API Documentation:
+📎 TMDB API Documentation:  
 https://www.themoviedb.org/documentation/api
 
-2️⃣ IMDB Web Scraping
+---
 
-User reviews are collected directly from IMDB using web scraping
+### 2️⃣ IMDB Web Scraping
+- User reviews are scraped from **IMDB**
+- **BeautifulSoup4** is used for extracting reviews from movie pages
+- These reviews are later used for sentiment analysis
 
-BeautifulSoup4 is used to extract reviews from movie pages
+---
 
-These reviews are later used for sentiment analysis
+## 📊 Data Preprocessing
+- Datasets were collected from **multiple years**
+- Data was available in **different formats and structures**
+- A preprocessing pipeline was applied to:
+  - Clean missing and inconsistent values
+  - Standardize column names
+  - Normalize features
+  - Convert all datasets into a **unified format**
 
-📊 Data Preprocessing
+This ensures compatibility across all movies in the recommender system.
 
-Movie datasets were collected from different years and multiple sources
+---
 
-Data came in different formats and structures
+## 😊 Sentiment Analysis
+- Sentiment analysis is performed on IMDB user reviews
+- **Naive Bayes Classifier** is used
+- Reviews are classified into:
+  - Positive
+  - Negative
+- Sentiment results provide additional insights into movie popularity and user perception
 
-A preprocessing pipeline was applied to:
+---
 
-Clean missing and inconsistent values
+## 🛠 Technologies & Tools
+- **Python**
+- **TMDB API**
+- **Web Scraping**
+  - BeautifulSoup4
+- **Machine Learning**
+  - Naive Bayes
+- **Data Processing**
+  - Pandas
+  - NumPy
+- **Natural Language Processing (NLP)**
 
-Normalize columns and feature names
+---
 
-Convert all datasets into a unified and consistent format
+## 🚀 Features
+- Real-time movie data fetching using TMDB API
+- IMDB review scraping
+- Sentiment analysis on user reviews
+- Content-based movie recommendations
+- Handles datasets from different years and formats
 
-This step ensures that all movies can be processed and compared correctly by the recommender system
+---
 
-😊 Sentiment Analysis
+## 📌 Conclusion
+This project demonstrates a full pipeline for building a recommender system using real-world data.  
+It integrates **data processing**, **NLP**, **machine learning**, and **API usage** to deliver meaningful movie recommendations and sentiment insights.
 
-Sentiment analysis is performed on IMDB user reviews
-
-Naive Bayes Classifier is used for classifying reviews into:
-
-Positive
-
-Negative
-
-The sentiment score helps in understanding overall user opinion about a movie and adds more insight to the recommendation process
-
-🛠 Technologies & Tools Used
-
-Python
-
-TMDB API
-
-Web Scraping
-
-BeautifulSoup4
-
-Machine Learning
-
-Naive Bayes (Sentiment Analysis)
-
-Data Processing
-
-Pandas
-
-NumPy
-
-Text Processing
-
-NLP techniques for cleaning and vectorizing reviews
-
-🚀 Features
-
-Fetches real-time movie metadata using TMDB API
-
-Scrapes real user reviews from IMDB
-
-Performs sentiment analysis on reviews
-
-Recommends movies similar to a selected movie
-
-Handles datasets from different years and formats efficiently
-
-📌 Conclusion
-
-This project demonstrates how recommendation systems can be built using content-based filtering, real APIs, web scraping, and machine learning.
-It combines data engineering, NLP, and ML concepts into one complete pipeline, making it a practical and educational implementation of a movie recommender system.
+---
